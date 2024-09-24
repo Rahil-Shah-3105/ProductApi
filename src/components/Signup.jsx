@@ -106,7 +106,7 @@ const Signup = () => {
               </span>
             </div>
           </div>
-          <button className='bg-slate-600 text-white border border-black rounded-lg text-center py-1.5 px-4 text-lg flex justify-center items-center mx-auto'>Signup</button>
+          <button className='bg-slate-600 text-white border border-black rounded-lg text-center py-1.5 px-4 text-lg flex justify-center items-center mx-auto' aria-label='signUp'>Signup</button>
         </div>
       </form>
     </>

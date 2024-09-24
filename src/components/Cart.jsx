@@ -52,6 +52,7 @@ const Cart = () => {
                   <button
                     className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg w-full"
                     onClick={() => handleRemoveFromCart(id)}
+                    aria-label='removeFromCart'
                   >
                     Remove
                   </button>
@@ -70,12 +71,14 @@ const Cart = () => {
             <button
               className="bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg w-full sm:w-auto"
               onClick={handleEmptyCart}
+              aria-label='emptyCart'
             >
               Empty Cart
             </button>
             <button
               className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg w-full sm:w-auto"
               onClick={() => navigate('/')}
+              aria-label='continueShopping'
             >
               Continue Shopping
             </button>

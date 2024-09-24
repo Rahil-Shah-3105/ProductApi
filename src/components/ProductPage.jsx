@@ -65,6 +65,7 @@ const ProductPage = () => {
                             <button
                                 className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
                                 onClick={handleAddToCart}
+                                aria-label='addToCart'
                             >
                                 Add To Cart
                             </button>
@@ -72,6 +73,7 @@ const ProductPage = () => {
                             <button
                                 className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
                                 onClick={() => navigate("/cart")}
+                                aria-label='backToCart'
                             >
                                 Back
                             </button>
