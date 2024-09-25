@@ -9,7 +9,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPasshowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -35,7 +35,7 @@ const Signup = () => {
     } else if (!email) {
       alert("Enter Email!!!");
     } else if (!phone) {
-      alert("Enter Phone Numebr!!!");
+      alert("Enter Phone Number!!!");
     } else if (!password) {
       alert("Enter Password!!!");
     } else if (!emailValidation) {
@@ -44,7 +44,7 @@ const Signup = () => {
       alert("Enter Proper Phone Number!!!");
     } else {
       alert("Signup");
-      console.log(`Username: ${username}\n Email: ${email}\n Phone: ${phone}\n Password: ${password}`);
+      console.log(`Username: ${username}\nEmail: ${email}\nPhone: ${phone}\nPassword: ${password}`);
     }
   };
 
@@ -101,7 +101,7 @@ const Signup = () => {
                 autoComplete='off'
                 onChange={handleChange}
                 className='border border-black rounded-md p-1.5 w-72' />
-              <span className='cursor-pointer absolute right-2.5 top-2' onClick={() => setShowPasshowPassword(!showPassword)}>
+              <span className='cursor-pointer absolute right-2.5 top-2' onClick={() => setShowPassword(!showPassword)}>
                 {showPassword ? <IoEyeOff size={20} /> : <IoEye size={20} />}
               </span>
             </div>

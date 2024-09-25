@@ -32,7 +32,10 @@ const ProductPage = () => {
     }, []);
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 pb-8">
+            <h1 className="text-3xl font-bold text-center mb-8 underline underline-offset-2 my-10">
+                Products Details
+            </h1>
             {data && (
                 <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
                     <img src={data.thumbnail} alt={data.title} className="w-full h-96 object-cover" />
