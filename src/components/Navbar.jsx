@@ -7,7 +7,7 @@ const Navbar = () => {
     const cartItem = cart.reduce((count, item) => count + 1, 0)
     return (
         <>
-            <nav className='flex sticky top-0 gap-10 bg-slate-600 p-3 justify-end pe-10 text-lg text-white'>
+            <nav className='flex sticky top-0 gap-10 bg-slate-600 p-3 justify-end pe-10 text-lg text-white z-10'>
                 <NavLink to={"/"} className={(e) => (e.isActive ? 'active' : '')}>Home</NavLink>
                 <NavLink to={"/signin"} className={(e) => (e.isActive ? 'active' : '')}>Signin</NavLink>
                 <NavLink to={"/signup"} className={(e) => (e.isActive ? 'active' : '')}>Signup</NavLink>

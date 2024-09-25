@@ -51,7 +51,7 @@ const ProductPage = () => {
                         {/* Tags Section */}
                         {data.tags && data.tags.length > 0 && (
                             <div className="mb-6">
-                                <h3 className="text-xl font-semibold mb-2">Tags:</h3>
+                                <h2 className="text-xl font-semibold mb-2">Tags:</h2>
                                 <div className="flex flex-wrap gap-2">
                                     {data.tags.map((tag, index) => (
                                         <span key={index} className="bg-indigo-200 text-indigo-800 py-1 px-3 rounded-full">
@@ -65,6 +65,7 @@ const ProductPage = () => {
                             <button
                                 className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
                                 onClick={handleAddToCart}
+                                id='addToCartBtn'
                                 aria-label='addToCart'
                             >
                                 Add To Cart
@@ -73,6 +74,7 @@ const ProductPage = () => {
                             <button
                                 className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition"
                                 onClick={() => navigate("/cart")}
+                                id='backToCartBtn'
                                 aria-label='backToCart'
                             >
                                 Back

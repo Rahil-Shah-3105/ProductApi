@@ -28,8 +28,8 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container mx-auto p-6">
-        <h1 className="text-4xl font-bold text-center mb-8">Your Cart</h1>
+      <div className="container mx-auto">
+        <h1 className="text-4xl font-bold text-center my-10 underline">Cart</h1>
         {cart.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {cart.map((item, index) => {
@@ -61,9 +61,12 @@ const Cart = () => {
             })}
           </div>
         ) : (
-          <p className="text-center text-lg font-medium text-gray-700 mt-8">
-            Your cart is empty.
-          </p>
+          <div className='flex flex-col items-center'>
+            <p className="text-center capitalize text-2xl font-medium text-gray-700 my-5">
+              Your cart is empty!!
+            </p>
+            <button onClick={() => navigate('/')} className='bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg mt-4'>Home</button>
+          </div>
         )}
 
         {cart.length > 0 && (

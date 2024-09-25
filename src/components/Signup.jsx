@@ -50,7 +50,7 @@ const Signup = () => {
 
   return (
     <>
-      <h1 className="text-3xl text-center underline underline-offset-8 my-10">Signup</h1>
+      <h1 className="text-3xl font-bold text-center underline underline-offset-8 my-10">Signup</h1>
       <form onSubmit={handleSignup}>
         <div className='flex flex-col gap-10'>
           <div className="flex gap-10 justify-center items-center">
