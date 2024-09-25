@@ -10,13 +10,12 @@ const Navbar = () => {
     return (
         <nav className='flex sticky top-0 gap-10 bg-slate-700 p-2 pt-1 justify-between pe-10 text-lg text-white z-10'>
             <Link to="/" className="flex items-center" aria-label='Redirect to Home Page'>
+                Products API
                 <img
                     src={logo}
                     alt="Product API Logo"
-                    // className=''
+                    className='w-20 h-auto'
                     loading="lazy"
-                    width="96"
-                    height="auto"
                 />
             </Link>
             <div className="flex gap-7 items-center">
