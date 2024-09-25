@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { HandleCart } from '../redux/Action/Action';
+import { Helmet } from 'react-helmet-async';
+import { toast } from 'react-toastify';
 
 const ProductPage = () => {
-    document.title = "Product";
     const [data, setData] = useState(null);
     const param = useParams();
     const navigate = useNavigate();
@@ -19,11 +20,11 @@ const ProductPage = () => {
 
     const handleAddToCart = () => {
         if (cart.some((item) => item.id === data.id)) {
-            alert("Product is already in the cart!!!");
+            toast.error("Product is already in the cart!!!");
             return;
         }
         dispatch(HandleCart([...cart, data]));
-        alert("Added to cart");
+        toast.success("Product Added to the cart");
         navigate("/cart");
     };
 
@@ -33,12 +34,23 @@ const ProductPage = () => {
 
     return (
         <div className="container mx-auto px-4 pb-8">
+            <Helmet>
+                <title>{data?.title || "Product Name"} - {data?.description || "Product Details"}</title>
+                <meta name='description' content={data?.description} />
+                <meta name='keywords' content={data?.category || data?.brand} />
+            </Helmet>
             <h1 className="text-3xl font-bold text-center mb-8 underline underline-offset-2 my-10">
                 Products Details
             </h1>
             {data && (
                 <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src={data.thumbnail} alt={data.title} className="w-full h-96 object-cover" />
+                    <img
+                        src={data.thumbnail}
+                        alt={data.title}
+                        className="object-cover mx-auto"
+                        loading="lazy"
+                        width="400"
+                        height="auto" />
                     <div className="p-6">
                         <h1 className="text-3xl font-bold text-gray-800 mb-2">{data.title}</h1>
                         <p className="text-gray-600 text-lg mb-4">{data.description}</p>

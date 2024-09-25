@@ -2,25 +2,32 @@ import { BrowserRouter, Route, Router, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import ProductPage from './components/ProductPage'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
 import Cart from './components/Cart'
-import ProductPage from './components/ProductPage'
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/products/:id' element={<ProductPage />} />
-          <Route path='/signin' element={<Signin />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/cart' element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Helmet>
+            <title>Product API</title>
+            <meta name="description" content="Product API Example" />
+          </Helmet>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/products/:id' element={<ProductPage />} />
+            <Route path='/signin' element={<Signin />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/cart' element={<Cart />} />
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
     </>
   )
 }

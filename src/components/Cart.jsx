@@ -2,9 +2,11 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { EmptyCart } from '../redux/Action/Action';
+import { Helmet } from 'react-helmet-async';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
-  document.title = 'Cart';
+
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,13 +23,17 @@ const Cart = () => {
     const confirmation = confirm('Do you wish to remove all products from the cart?');
     if (confirmation) {
       dispatch(EmptyCart([]));
-      alert('Cart Emptied');
+      toast.success('Cart Emptied');
       navigate('/');
     }
   };
 
   return (
     <>
+      <Helmet>
+        <title>Cart - you can manage your favorite item from here using add that product in to the cart using add to cart button</title>
+        <meta name="description" content="Cart - Here you can store your some favorite product to check them again" />
+      </Helmet>
       <div className="container mx-auto">
         <h1 className="text-4xl font-bold text-center my-10 underline">Cart</h1>
         {cart.length > 0 ? (

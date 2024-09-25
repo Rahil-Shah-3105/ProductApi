@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -17,6 +18,11 @@ const Home = () => {
   return (
     <>
       <div className="container mx-auto pb-8">
+        <Helmet>
+          <title>Product API</title>
+          <meta name='description' content='Home Page of the Product API Example.'/>
+          <meta name='keywords' content='API, Product API, Example of Api Call'/>
+        </Helmet>
         <h1 className="text-3xl font-bold text-center mb-8 underline underline-offset-2 my-10">
           Our Products
         </h1>
@@ -28,7 +34,7 @@ const Home = () => {
                 key={index}
                 className="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105 p-5 mx-3"
               >
-                <Link to={`/products/${id}`}>
+                <Link to={`/products/${id}`} aria-label='Product Details Page'>
                   <h2 className="text-xl font-semibold text-gray-800 mb-2">
                     {title}
                   </h2>

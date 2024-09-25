@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet-async';
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import { toast } from 'react-toastify';
 
 const Signin = () => {
-  document.title = "Signin";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,16 +27,16 @@ const Signin = () => {
     const validation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!email) {
-      alert('Enter Email!!!');
+      toast.error('Enter Email!!!');
     }
     else if (!password) {
-      alert("Enter Password!!!");
+      toast.error("Enter Password!!!");
     }
     else if (!validation.test(email)) {
-      alert("Enter Valid Email");
+      toast.error("Enter Valid Email");
     }
     else {
-      alert("Signin");
+      toast.success("Signin Successfully...");
       console.log(`Email is ${email} and Password is: ${password}`);
     }
   };
@@ -43,6 +44,10 @@ const Signin = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Signin - small example of signin page</title>
+        <meta name="description" content="Signin to the small example of signin page" />
+      </Helmet>
       <h1 className="text-3xl font-bold text-center underline underline-offset-8 my-10">Signin</h1>
       <form onSubmit={handleSignin}>
         <div className='flex flex-col gap-10'>
