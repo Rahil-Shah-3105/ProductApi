@@ -10,13 +10,13 @@ const Navbar = () => {
     return (
         <nav className='flex sticky top-0 gap-10 bg-slate-700 p-2 pt-1 justify-between pe-10 text-lg text-white z-10'>
             <Link to="/" className="flex items-center" aria-label='Redirect to Home Page'>
-                Products API
                 <img
                     src={logo}
                     alt="Product API Logo"
                     className='w-20 h-auto'
                     loading="lazy"
                 />
+                <div className="flex mx-2">Products API</div>
             </Link>
             <div className="flex gap-7 items-center">
                 <NavLink to="/" className={(e) => (e.isActive ? 'active' : '')}>Home</NavLink>
@@ -25,7 +25,7 @@ const Navbar = () => {
                 <NavLink to="/cart" className={(e) => (e.isActive ? 'active' : '')}>
                     Cart
                     {cartItem > 0 && (
-                        <span className="bg-blue-500 text-white rounded-full px-2 absolute top-2 md:top-0 lg:top-2 right-6 text-sm">
+                        <span className="bg-blue-500 text-white rounded-full px-2 absolute top-2 md:top-0 lg:top-1 right-6 text-sm">
                             {cartItem}
                         </span>
                     )}

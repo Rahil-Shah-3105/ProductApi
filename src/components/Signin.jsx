@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Helmet } from 'react-helmet-async';
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Signin = () => {
@@ -9,6 +10,7 @@ const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -37,6 +39,7 @@ const Signin = () => {
     }
     else {
       toast.success("Signin Successfully...");
+      navigate("/");
       console.log(`Email is ${email} and Password is: ${password}`);
     }
   };
