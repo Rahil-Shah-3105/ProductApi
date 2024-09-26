@@ -1,3 +1,8 @@
 .active {
   color: #00faff;
 }
+
+::selection {
+  background-color: #00faff;
+  color: #000;
+}

@@ -19,3 +19,4 @@
 - React-toastify: npm i react-toastify with version ^10.0.5
 - Helmet-async: npm i react-helmet-async with version ^2.0.5
 - Lazyload: npm i react-lazyload with version ^3.2.1
+

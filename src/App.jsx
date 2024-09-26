@@ -7,6 +7,7 @@ import Signin from './components/Signin'
 import Signup from './components/Signup'
 import Cart from './components/Cart'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
+import PageNotFound from './components/PageNotFound'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             <Route path='/signin' element={<Signin />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/*' element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
       </HelmetProvider>
